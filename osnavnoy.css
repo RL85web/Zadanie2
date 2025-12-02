@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+    background-image: url(picca-pepperoni-e1536061000810.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(0.7);
+    /* Уменьшает яркость на 30% */
+    z-index: -1;
+}
+
+/* ================================
+    НАВИГАЦИЯ
+   ================================ */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background: rgba(238, 204, 132, 0.4);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(238, 204, 132, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    color: #fff;
+}
+
+.phone-number {
+    margin-right: 2%;
+}
+
+#ikonka {
+    width: 40px;
+    height: 40px;
+}
+
+.list-item-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    --animate-duration: 2s;
+    animation-delay: 0.5s;
+}
+
+#ikonka_dostavka {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+
+
+.main_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #333;
+    color: white;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu_links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menu_links a {
+    font-size: 35px;
+    color: #1a0b0b;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+.content {
+    color: rgb(255, 255, 255);
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    margin-left: 200px;
+    line-height: 60px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.content h1 {
+    display: flex;
+    margin-left: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style: disc;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 0;
+    font-weight: bolder;
+}
+
+#foto-content img {
+    flex-direction: column;
+    align-items: self-end;
+}
+
+#f1 {
+    width: 80%;
+
+}
+
+/* ================================
+    КАРТОЧКИ МЕНЮ
+   ================================ */
+
+#card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.card {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.card_1,
+.card_2,
+.card_3 {
+    width: 300px;
+    min-height: 450px;
+    border-radius: 10px;
+    background: rgb(217, 226, 130);
+    color: black;
+    font-size: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+}
+
+.card_1 img,
+.card_2 img,
+.card_3 img {
+    width: 80%;
+    margin: 40px;
+}
+
+.card_1 p,
+.card_2 p,
+.card_3 p {
+    text-align: center;
+}
+
+.card_1 button,
+.card_2 button,
+.card_3 button {
+    display: block;
+    margin: 0 auto 40px auto;
+}
+
+.card_1:hover,
+.card_2:hover,
+.card_3:hover {
+    transform: translateY(-5px);
+}
+
+#card :active {
+    color: rgb(75, 187, 10);
+}
+
+.card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.pizza {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.cena {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.card button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.card button:hover {
+    background: #c0392b;
+}
+
+/* ================================
+    КНОПКА СКРОЛЛ
+   ================================ */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    border: none;
+    cursor: pointer;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background-color: #d32f2f;
+}
+
+/* ================================
+    ИНФО-БЛОКИ (О нас / Преимущества / Почему мы)
+   ================================ */
+#info-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    margin-top: 50%;
+}
+
+.info-block {
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.info-block h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #000;
+}
+
+.info-block ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#dostavka_form{
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* ================================
+    ПОДВАЛ
+   ================================ */
+
+#tg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#tg img {
+    width: 24px;
+    height: 24px;
+}
+
+#tg a {
+    margin: 0;
+    color: black;
+    text-decoration: none;
+}
+
+#footer {
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-around;
+    /* Равномерное распределение */
+    align-items: center;
+    text-align: center;
+}
+
+.phone-number-footer {
+
+    margin: 0;
+}
+
+
+/* Для мобильных устройств */
+@media (max-width: 340px) {
+
+    .card_1,
+    .card_2,
+    .card_3 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .content {
+        margin-top: 20px;
+        margin-left: 10%;
+        line-height: 35px;
+        font-size: medium;
+        color: white;
+    }
+
+    .content h1 {
+        display: flex;
+        font-size: 1.0em;
+        margin-bottom: 15px;
+        margin-left: 2%;
+        text-align: center;
+    }
+
+    .content ul {
+        font-size: 0.85em;
+        margin-left: 15px;
+    }
+
+    .menu_links a {
+        font-size: 20px;
+    }
+
+    #info-section {
+        flex-direction: column;
+        margin-top: 20%;
+    }
+
+    .info-block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .info-block p,
+    ul {
+        font-size: 12px;
+    }
+
+
+    #navbar {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    #ikonka {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu_links {
+        gap: 6px;
+    }
+
+    .menu_links a {
+        font-size: 0.75em;
+        padding: 5px 6px;
+        min-width: 48%;
+    }
+
+    .phone-number {
+        font-size: 0.8em;
+        margin: 0;
+        order: 3;
+        text-align: center;
+        width: 100%;
+    }
+
+    #footer {
+        padding: 15px 10px;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-align: center;
+    }
+
+    #tg {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        margin-left: 0;
+    }
+
+    #tg img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #tg a {
+        margin: 0;
+        color: black;
+        text-decoration: none;
+        font-size: 0.85em;
+    }
+
+    .phone-number-footer {
+        margin: 0;
+        font-size: 0.85em;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        /* Предотвращает горизонтальный скролл */
+    }
+
+    .scroll-to-top {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+/* Для планшетов */
+@media (min-width: 341px) and (max-width: 1024px) {
+
+    .card_1,
+    .card_2,
+    .card_3 {
+        width: 48%;
+        margin: 1%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .content {
+        margin-top: 30px;
+        margin-left: 8%;
+        line-height: 40px;
+        font-size: large;
+        color: white;
+    }
+
+    .content h1 {
+        display: flex;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        margin-left: 3%;
+        text-align: left;
+    }
+
+    .content ul {
+        font-size: 1em;
+        margin-left: 20px;
+    }
+
+    .menu_links a {
+        font-size: 22px;
+    }
+
+    #info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 15%;
+        justify-content: space-between;
+    }
+
+    .info-block {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .info-block p,
+    .info-block ul {
+        font-size: 14px;
+    }
+
+    #navbar {
+        padding: 12px 15px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    #ikonka {
+        width: 35px;
+        height: 35px;
+    }
+
+    .menu_links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu_links a {
+        font-size: 1.2em;
+        padding: 8px 12px;
+        min-width: auto;
+    }
+
+    .phone-number {
+        font-size: 1em;
+        margin: 0;
+        order: 3;
+        text-align: right;
+        width: auto;
+    }
+
+    #footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        z-index: 9999;
+    }
+
+    /* Дополнительные стили для лучшего отображения на планшетах */
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Если используется flexbox для карточек */
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    /* Адаптация изображений */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
